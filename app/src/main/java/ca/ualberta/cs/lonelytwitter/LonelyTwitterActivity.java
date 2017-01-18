@@ -23,7 +23,7 @@ public class LonelyTwitterActivity extends Activity {
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
-	
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,29 @@ public class LonelyTwitterActivity extends Activity {
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
+
+		// tweet.message = "sdkf";
+		try {
+			Tweet tweet = new NormalTweet ("First tweet");
+			tweet.setMessage("alskdjfkldj");
+			ImportantTweet importantTweet = new ImportantTweet("Very Important");
+			importantTweet.getDate();
+			NormalTweet normalTweet = new NormalTweet("im normal");
+
+			ArrayList<Tweet> arrayList = new ArrayList<Tweet>();
+			arrayList.add(tweet);
+			arrayList.add((Tweet) importantTweet);
+			arrayList.add(normalTweet);
+
+
+			//Mood mood = new Mood ("Grumpy");
+			//ArrayList<Mood> arrayListMood = new ArrayList<Mood>();
+
+		} catch (TweetTooLongException e){
+			e.printStackTrace();
+		}
+		// Tweet tweet2 = net Tweet(new Date
+
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
@@ -76,7 +99,7 @@ public class LonelyTwitterActivity extends Activity {
 		}
 		return tweets.toArray(new String[tweets.size()]);
 	}
-	
+
 	private void saveInFile(String text, Date date) {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
