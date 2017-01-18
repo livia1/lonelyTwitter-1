@@ -36,11 +36,17 @@ public class LonelyTwitterActivity extends Activity {
 
 		// tweet.message = "sdkf";
 		try {
+
+
 			Tweet tweet = new NormalTweet ("First tweet");
-			tweet.setMessage("alskdjfkldj");
+			tweet.addMood(new HappyMood());
+			//tweet.setMessage("alskdjfkldj");
 			ImportantTweet importantTweet = new ImportantTweet("Very Important");
 			importantTweet.getDate();
 			NormalTweet normalTweet = new NormalTweet("im normal");
+
+
+
 
 			ArrayList<Tweet> arrayList = new ArrayList<Tweet>();
 			arrayList.add(tweet);
@@ -48,8 +54,7 @@ public class LonelyTwitterActivity extends Activity {
 			arrayList.add(normalTweet);
 
 
-			//Mood mood = new Mood ("Grumpy");
-			//ArrayList<Mood> arrayListMood = new ArrayList<Mood>();
+
 
 		} catch (TweetTooLongException e){
 			e.printStackTrace();
@@ -63,7 +68,7 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
+				//finish();
 
 			}
 		});
@@ -116,3 +121,34 @@ public class LonelyTwitterActivity extends Activity {
 		}
 	}
 }
+
+
+/*
+
+
+public car c;
+
+c = new truck();
+//c = new van();
+
+public truck t
+t = new truck();
+t.fourbyfour
+
+t = new van
+
+public abstract class car
+{string model;
+public void Milage(){};
+}
+
+public class truck extends car{
+public void milage()
+{
+}
+public fourbyfour(){};
+}
+
+public class van extends car{}
+
+*/
