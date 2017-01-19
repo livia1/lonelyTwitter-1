@@ -7,12 +7,16 @@ import java.util.Date;
  */
 
 public class SadMood extends Mood {
-    public SadMood() {
-        super(":(");
+    public SadMood(String m) {
+        super(m);
     }
 
-    public SadMood(Date d) {
-        super(":(", d);
+    public SadMood(String m, Date d) {
+        super(m, d);
+    }
+    @Override
+    public String getMood(){
+        return super.getMood() + " :(";
     }
 
 }

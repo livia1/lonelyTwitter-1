@@ -20,13 +20,14 @@ public abstract class Mood {
         date = d;
     }
 
+    // Getters and setters for Date
     public Date getDate() {
         return date;
     }
     public void setDate(Date date) {
         this.date = date;
     }
-
+    // Getters and setters for Mood
     public String getMood() {
         return mood;
     }

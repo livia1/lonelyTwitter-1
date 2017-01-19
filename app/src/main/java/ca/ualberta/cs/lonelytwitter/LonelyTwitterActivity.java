@@ -37,30 +37,30 @@ public class LonelyTwitterActivity extends Activity {
 		// tweet.message = "sdkf";
 		try {
 
-
 			Tweet tweet = new NormalTweet ("First tweet");
-			tweet.addMood(new HappyMood());
 			//tweet.setMessage("alskdjfkldj");
 			ImportantTweet importantTweet = new ImportantTweet("Very Important");
 			importantTweet.getDate();
 			NormalTweet normalTweet = new NormalTweet("im normal");
-
-
-
 
 			ArrayList<Tweet> arrayList = new ArrayList<Tweet>();
 			arrayList.add(tweet);
 			arrayList.add((Tweet) importantTweet);
 			arrayList.add(normalTweet);
 
+			Mood mood = new HappyMood (":D");
+			HappyMood happyMood = new HappyMood("Feeling Happy");
+			SadMood sadMood = new SadMood("Feeling Sad");
 
+			ArrayList<Mood> moodArrayList = new ArrayList<Mood>();
+			moodArrayList.add(mood);
+			moodArrayList.add(happyMood);
+			moodArrayList.add(sadMood);
 
 
 		} catch (TweetTooLongException e){
 			e.printStackTrace();
 		}
-		// Tweet tweet2 = net Tweet(new Date
-
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
@@ -68,7 +68,7 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				//finish();
+				finish();
 
 			}
 		});
@@ -121,34 +121,3 @@ public class LonelyTwitterActivity extends Activity {
 		}
 	}
 }
-
-
-/*
-
-
-public car c;
-
-c = new truck();
-//c = new van();
-
-public truck t
-t = new truck();
-t.fourbyfour
-
-t = new van
-
-public abstract class car
-{string model;
-public void Milage(){};
-}
-
-public class truck extends car{
-public void milage()
-{
-}
-public fourbyfour(){};
-}
-
-public class van extends car{}
-
-*/

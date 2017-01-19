@@ -7,12 +7,16 @@ import java.util.Date;
  */
 
 public class HappyMood extends Mood {
-    public HappyMood() {
-        super(":) ");
+    public HappyMood(String m) {
+        super(m);
     }
 
-    public HappyMood(Date d) {
-        super(":)", d);
+    public HappyMood(String m, Date d) {
+        super(m, d);
     }
 
+    @Override
+    public String getMood(){
+        return super.getMood() + " :)";
+    }
 }
