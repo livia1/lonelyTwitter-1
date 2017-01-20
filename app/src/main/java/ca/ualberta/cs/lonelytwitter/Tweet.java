@@ -9,26 +9,50 @@ import java.util.Date;
 public abstract class Tweet implements Tweetable{
     private Date date;
     private String message;
-    //private ArrayList<Mood> moods;
 
     public abstract Boolean isImportant();
 
     public Tweet(Date date, String message) throws TweetTooLongException {
         this.setMessage(message);
         this.date = date;
-        //this.moods = new ArrayList<Mood>();
     }
     public Tweet(String message) throws TweetTooLongException {
         this.setMessage(message);
         this.date = new Date(); // current time and date
-        //this.moods = new ArrayList<Mood>();
     }
 
-    /*
-    public void addMood(Mood m) {
-        moods.add(m);
-    }*/
+    ArrayList<Mood> moodArrayList = new ArrayList<Mood>();
 
+    public void addMoodHappy(Mood happy) {
+        // Sets date to default
+        Mood mood = new HappyMood(":D");
+        HappyMood happyMood = new HappyMood("Feeling Happy");
+        moodArrayList.add(happyMood);
+
+    }
+
+    public void addMoodHappy(Date date, Mood happy) {
+
+        Mood mood = new HappyMood(":D");
+        HappyMood happyMood = new HappyMood("Feeling Happy");
+        moodArrayList.add(happyMood);
+        this.date = date;
+    }
+
+    public void addMoodSad(Mood sad) {
+        // Sets date to default
+        Mood mood = new SadMood(":(");
+        SadMood sadMood = new SadMood("Feeling Sad");
+        moodArrayList.add(sadMood);
+    }
+
+    public void addMoodSad(Date date, Mood sad) {
+
+        Mood mood = new SadMood(":(");
+        SadMood sadMood = new SadMood("Feeling Sad");
+        moodArrayList.add(sadMood);
+        this.date = date;
+    }
 
     // Getters and setters for Date
     public Date getDate() {
@@ -37,7 +61,6 @@ public abstract class Tweet implements Tweetable{
     public void setDate(Date date) {
         this.date = date;
     }
-
 
     //Getters and setters for Message
     public String getMessage() {
