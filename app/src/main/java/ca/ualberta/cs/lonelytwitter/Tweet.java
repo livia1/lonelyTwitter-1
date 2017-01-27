@@ -10,8 +10,6 @@ public abstract class Tweet implements Tweetable{
     private Date date;
     private String message;
 
-    public abstract Boolean isImportant();
-
     public Tweet(Date date, String message) throws TweetTooLongException {
         this.setMessage(message);
         this.date = date;
@@ -20,15 +18,14 @@ public abstract class Tweet implements Tweetable{
         this.setMessage(message);
         this.date = new Date(); // current time and date
     }
-
-    ArrayList<Mood> moodArrayList = new ArrayList<Mood>();
+    /*
+    public ArrayList<Mood> moodArrayList = new ArrayList<Mood>();
 
     public void addMoodHappy(Mood happy) {
         // Sets date to default
         Mood mood = new HappyMood(":D");
         HappyMood happyMood = new HappyMood("Feeling Happy");
         moodArrayList.add(happyMood);
-
     }
 
     public void addMoodHappy(Date date, Mood happy) {
@@ -52,7 +49,7 @@ public abstract class Tweet implements Tweetable{
         SadMood sadMood = new SadMood("Feeling Sad");
         moodArrayList.add(sadMood);
         this.date = date;
-    }
+    }*/
 
     // Getters and setters for Date
     public Date getDate() {
@@ -70,8 +67,7 @@ public abstract class Tweet implements Tweetable{
         if (message.length() > 144) {
             throw new TweetTooLongException();
         }
-        else{
-            this.message = message;
-        }
+        this.message = message;
     }
+    public abstract Boolean isImportant();
 }
