@@ -6,6 +6,9 @@ import java.util.Date;
  * Created by livialee on 2017-01-18.
  */
 
+/**
+ * The sadMood class that appends a :( at the end of the tweet
+ */
 public class SadMood extends Mood {
     public SadMood(String m) {
         super(m);

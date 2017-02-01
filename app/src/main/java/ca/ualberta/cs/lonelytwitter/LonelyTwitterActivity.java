@@ -30,7 +30,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 /**
- * This class is the main view class of the projec. <br> In this class, user interaction
+ * This class is the main view class of the project. <br> In this class, user interaction
  * and file manipulation is performed.
  * All files are in teh form of "json" files that are stored in Emulator's accessible from Android
  * Device Monitor
@@ -116,16 +116,13 @@ public class LonelyTwitterActivity extends Activity {
 				String text = bodyText.getText().toString();
 
 				text = trimExtraSpaces(text);
-				Tweet tweet = new NormalTweet(text);
-				throw TweetTooLongException;
 
-				/**
                 Tweet tweet = null;
                 try {
                     tweet = new NormalTweet(text);
                 } catch (TweetTooLongException e) {
                     e.printStackTrace();
-                }*/
+                }
 
                 tweetList.add(tweet);
                 adapter.notifyDataSetChanged();

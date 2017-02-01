@@ -6,6 +6,9 @@ import java.util.Date;
  * Created by livialee on 2017-01-18.
  */
 
+/**
+ * Created a mood class that gets and sets the mood.
+ */
 public abstract class Mood {
     private Date date;
     private String mood;

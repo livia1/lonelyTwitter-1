@@ -6,14 +6,32 @@ import java.util.Date;
 /**
  * Created by livia1 on 1/17/17.
  */
+
+/**
+ * This class is the abstract base class that will get get the date and message
+ *
+ */
+
 public abstract class Tweet implements Tweetable{
     private Date date;
     private String message;
 
+    /**
+     * Takes the tweet message and date and saves it
+     * @param date
+     * @param message
+     * @throws TweetTooLongException
+     */
     public Tweet(Date date, String message) throws TweetTooLongException {
         this.setMessage(message);
         this.date = date;
     }
+
+    /**
+     * Take the tweet message and sets it. The date is automatically set.
+     * @param message
+     * @throws TweetTooLongException
+     */
     public Tweet(String message) throws TweetTooLongException {
         this.setMessage(message);
         this.date = new Date(); // current time and date
@@ -51,18 +69,35 @@ public abstract class Tweet implements Tweetable{
         this.date = date;
     }*/
 
-    // Getters and setters for Date
+    /**
+     * Gets the current date and returns it
+     * @return date
+     */
     public Date getDate() {
         return date;
     }
+
+    /**
+     * Take the date from the string and set it as the date
+     * @param date
+     */
     public void setDate(Date date) {
         this.date = date;
     }
 
-    //Getters and setters for Message
+    /**
+     * Gets the message from the string and returns it
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
+
+    /**
+     * Takes the message from the string and if it too long call TweetTooLongException
+     * @param message
+     * @throws TweetTooLongException
+     */
     public void setMessage(String message) throws TweetTooLongException {
         if (message.length() > 144) {
             throw new TweetTooLongException();
@@ -70,4 +105,15 @@ public abstract class Tweet implements Tweetable{
         this.message = message;
     }
     public abstract Boolean isImportant();
+
+
+    /**
+     * Overrides the original string and returns it in a readable format
+     * @return
+     */
+    @Override
+    public String toString(){
+        return date.toString() + " | " + message;
+
+    }
 }
