@@ -108,7 +108,7 @@ public abstract class Tweet implements Tweetable{
 
 
     /**
-     * Overrides the original string and returns it in a readable format
+     * Overrides the original string and returns it in a readable form
      * @return
      */
     @Override

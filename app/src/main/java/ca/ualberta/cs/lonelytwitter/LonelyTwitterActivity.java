@@ -82,7 +82,7 @@ public class LonelyTwitterActivity extends Activity {
 		Button saveButton = (Button) findViewById(R.id.save);
         Button clearButton = (Button) findViewById(R.id.clear);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
-
+		/**
 		try {
 
 			Tweet tweet = new NormalTweet ("First tweet");
@@ -97,7 +97,7 @@ public class LonelyTwitterActivity extends Activity {
 
 		} catch (TweetTooLongException e){
 			e.printStackTrace();
-		}
+		}*/
 
         clearButton.setOnClickListener(new View.OnClickListener() {
 
@@ -169,7 +169,7 @@ public class LonelyTwitterActivity extends Activity {
 	 * @exception FileNotFoundException if the file is not created first.
 	 */
 	private void loadFromFile() {
-		ArrayList<String> tweets = new ArrayList<String>();
+		//ArrayList<String> tweets = new ArrayList<String>();
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
@@ -214,3 +214,4 @@ public class LonelyTwitterActivity extends Activity {
 		}
 	}
 }
+
