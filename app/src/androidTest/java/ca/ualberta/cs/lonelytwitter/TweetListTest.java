@@ -16,9 +16,7 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
     public void testAddTweet(){
         TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("Test tweet");
-
         tweets.add(tweet);
-
         assertTrue(tweets.hasTweet(tweet));   // Will return green and 1 test passed
         //assertFalse(tweets.hasTweet(tweet));    // Will return red and 1 test failed
     }
@@ -26,10 +24,8 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
     public void testGetTweet(){
         TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("Another Test Tweet");
-
         tweets.add(tweet);
         Tweet returnedTweet = tweets.getTweet(0);
-
         assertEquals(returnedTweet.getMessage(), tweet.getMessage());
         assertEquals(returnedTweet.getDate(), tweet.getDate());
         //Both of these uncommented will return All 2 tests passed
@@ -38,10 +34,8 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
     public void testDeleteTweet(){
         TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("Last Tweet");
-
         tweets.add(tweet);
         tweets.delete(tweet);
-
         assertFalse(tweets.hasTweet(tweet));
         //makes sure that we are deleting from the arraylist and that we are actually deleting it
     }
@@ -90,4 +84,10 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
 
         assertEquals(tweets.getCount(), 2);
     }
+	public void testHasTweet(){
+		TweetList list = new TweetList();
+        Tweet tweet = new NormalTweet("Do I have this tweet");
+        list.add(tweet);
+        assertTrue(list.hasTweet(tweet));
+	}
 }
