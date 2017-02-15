@@ -24,7 +24,6 @@ public class TweetList {
 
     //hasTweet() -- should return true if there is a tweet that equals() another tweet
     public boolean hasTweet(Tweet tweet){
-
         return tweets.contains(tweet);
     }
 
@@ -33,9 +32,10 @@ public class TweetList {
     }
 
     //getTweets() -- should return a list of tweets in chronological order
-    public Tweet getTweet(int index){
+    public Tweet getTweets(int index){
         return tweets.get(index);
     }
+
     //getCount() -- should accurately count up the tweets
     public int getCount(){
         return tweets.size();

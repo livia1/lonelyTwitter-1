@@ -25,7 +25,7 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
         TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("Another Test Tweet");
         tweets.add(tweet);
-        Tweet returnedTweet = tweets.getTweet(0);
+        Tweet returnedTweet = tweets.getTweets(0);
         assertEquals(returnedTweet.getMessage(), tweet.getMessage());
         assertEquals(returnedTweet.getDate(), tweet.getDate());
         //Both of these uncommented will return All 2 tests passed
@@ -57,21 +57,15 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
 
         }
     }
-    public void testGetList(){
-        ArrayList<Tweet> tweetlist = new ArrayList<Tweet>();
+    public void testGetTweets(){
         TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("test tweet1");
         Tweet tweet2 = new NormalTweet("test tweet2");
 
         tweets.add(tweet);
         tweets.add(tweet2);
-        tweetlist.add(tweet);
-        tweetlist.add(tweet2);
-
-        ArrayList<Tweet> returnedList = tweets.getTweets();
-
-        assertEquals(tweetlist, returnedList);
-
+        assertEquals(tweets.getTweets(0), tweet);
+        assertEquals(tweets.getTweets(1), tweet2);
     }
 
     public void testGetCount(){
@@ -85,9 +79,9 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
         assertEquals(tweets.getCount(), 2);
     }
 	public void testHasTweet(){
-		TweetList list = new TweetList();
+		TweetList tweets = new TweetList();
         Tweet tweet = new NormalTweet("Do I have this tweet");
-        list.add(tweet);
-        assertTrue(list.hasTweet(tweet));
+        tweets.add(tweet);
+        assertTrue(tweets.hasTweet(tweet));
 	}
 }
